@@ -10,10 +10,8 @@ function setup() {
 
 function draw() {
   background(177,156,217);
-  textSize(48);
-  textFont(f1);
+  textFont(f1,45);
   text("Soft",width/2,height/2);
-
-  textFont(f2);
+  textFont(f2,60);
   text("Kitty",width/2,height/2 + 50);
 }
