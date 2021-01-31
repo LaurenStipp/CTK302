@@ -250,4 +250,5 @@ function draw() {
   }else {
   textSize(16);
   text("Roza is an axlotl who lives in a sad rocky place. \nShe finds no joy because there is no friends or toys to play with.\nShe spends her days just swimming around hoping she will come \nacross something exciting.",15,16);}
+
 }
