@@ -249,6 +249,6 @@ function draw() {
   text("One day she stumbled upon a stump. \nThen, the stump errupted! It was a vent and it was shooting out \nbubbles. Roza loves bubbles and this is her new place to stay.",15,16);
   }else {
   textSize(16);
-  text("Roza is an axlotl who lives in a sad rocky place. \nShe finds no joy because there is no friends or toys to play with.\nShe spends her days just swimming around hoping she will come \nacross something exciting.",15,16);}
+  text("Roza is an axlotl who lives in a sad rocky place. \nShe finds no joy because there are no friends or toys to play with.\nShe spends her days just swimming around hoping she will come \nacross something exciting.",15,16);}
 
 }
