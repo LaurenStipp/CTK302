@@ -6,7 +6,6 @@ function setup() {
 
 function draw() {
   background(255);
-
   r = random(255);
 
   g = random(255);
@@ -24,6 +23,7 @@ function draw() {
     break;
 
     case 1:
+    stroke(0);
     for (var j=0; j<=height;j ++) {
       for (var i=0; i<=width; i++) {
         fill(0,139,139);
