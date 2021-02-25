@@ -29,11 +29,8 @@ function draw() {
       background('purple');
       text("tap the circle to continue", width/2+10,height/2+10);
       rect(width/2-50, height-100,100,50);
-      // if (touch == 1) {
-      //   state = 2;
-      // }
       if ((mouseX>width/2-50)&&(mouseX<width/2+50)&&(mouseY>height-100)&&(mouseY<height-50)) {
-        if (state == 1 ){
+        if (touch == 1 ){
           state = 2;
         }
       }
