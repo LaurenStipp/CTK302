@@ -27,7 +27,7 @@ function draw() {
     case 1:
       //touch the rock to continue
       background('purple');
-      ellipse(width/2,height/2,50,50);
+      ellipse(width / 2, height / 2, 50, 50);
       if (touch == 1) {
         state = 2;
       }
@@ -37,10 +37,16 @@ function draw() {
       background('green');
       vol = (mic.getLevel()).toFixed(2);
       if (vol > .5) {
-        state = 2;
+        state = 3;
       }
       textSize(18);
       text("Scream to make the leaves move." + vol, width / 2, height / 2);
+      break;
+
+    case 3:
+      background('green');
+      textSize(18);
+      text("the end", width / 2, height / 2);
       break;
   }
 }
