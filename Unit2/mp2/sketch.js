@@ -27,13 +27,13 @@ function draw() {
     case 1:
       //touch the rock to continue
       background('purple');
-      text("tap the circle to continue", width/2-10,height/2-10);
-      ellipse(width / 2, height / 2, 50, 50);
+      text("tap the circle to continue", width/2+10,height/2+10);
+      rect(width/2-50, height-100,100,50);
       // if (touch == 1) {
       //   state = 2;
       // }
-      if ((mouseX>width/2)&&(mouseX<width/2)&&(mouseY>height/2)&&(mouseY<height/2)) {
-        if (touch == 1) {
+      if ((mouseX>width/2-50)&&(mouseX<width/2+50)&&(mouseY>height-100)&&(mouseY<height-50)) {
+        if (state == 1 ){
           state = 2;
         }
       }
