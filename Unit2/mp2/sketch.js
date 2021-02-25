@@ -1,7 +1,8 @@
 let mic;
 let vol;
 let state = 0;
-let myTimer = 0;
+let timer = 0;
+
 function setup() {
   createCanvas(400, 400);
   mic = new p5.AudioIn();
@@ -9,34 +10,47 @@ function setup() {
 }
 
 function draw() {
+  clear();
+  touch = touches.length;
   background(255);
-  switch(state) {
+  switch (state) {
     case 0:
-    background('red');
-    myTimer=myTimer+1;
-    if (myTimer>3*10){
-      myTimer=0;
-      state=1;
-    }
-    break;
+      background('red');
+      text("Click to continue your journey", width / 2, height / 2);
+      //     timer++;
+      //     if (timer > 3 * 60) {
+      //       state = 1;
+      //       timer = 0;
+      // }
+      break;
 
     case 1:
-    background('green');
-    vol = (mic.getLevel()).toFixed(2);
-    if (vol > '2.00') {
+      //touch the rock to continue
+      background('purple');
+      ellipse(width/2,height/2,50,50);
+      if (touch == 1) {
+        state = 2;
+      }
+      break;
+
+    case 2:
+      background('green');
+      vol = (mic.getLevel()).toFixed(2);
+      if (vol > .5) {
         state = 2;
       }
       textSize(18);
-      text("Scream to make the leaves move."+vol,50,100);
-    break;
-
-    case 2:
-    background('blue');
-    myTimer=myTimer+1;
-    if (myTimer>3*10){
-      myTimer=0;
-      state=0;
-    }
-    break;
+      text("Scream to make the leaves move." + vol, width / 2, height / 2);
+      break;
   }
+}
+
+function mouseReleased() {
+  if (state == 0) {
+    state = 1;
+  }
+}
+
+function touchStarted() {
+  getAudioContext().resume();
 }
