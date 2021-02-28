@@ -15,18 +15,18 @@ function draw() {
   background(255);
   switch (state) {
     case 0:
-      background('red');
+      background(208,239,254);
       text("Click to continue your journey", width / 2, height / 2);
-      //     timer++;
-      //     if (timer > 3 * 60) {
-      //       state = 1;
-      //       timer = 0;
-      // }
+          timer++;
+          if (timer > 3 * 60) {
+            state = 1;
+            timer = 0;
+      }
       break;
 
     case 1:
       //touch the rock to continue
-      background('purple');
+      background(87,171,78);
       text("tap the circle to continue", width/2+10,height/2+10);
       rect(width/2-50, height-100,100,50);
       if ((mouseX>width/2-50)&&(mouseX<width/2+50)&&(mouseY>height-100)&&(mouseY<height-50)) {
@@ -37,28 +37,28 @@ function draw() {
       break;
 
     case 2:
-      background('green');
+      background(87,171,78);
       vol = (mic.getLevel()).toFixed(2);
       if (vol > .5) {
         state = 3;
       }
       textSize(18);
-      text("Scream to make the leaves move." + vol, width / 2, height / 2);
+      text("Scream to wake the slugs." + vol, width / 2, height / 2);
       break;
 
     case 3:
-      background('green');
+      background(87,171,78);
       textSize(18);
       text("the end", width / 2, height / 2);
       break;
   }
 }
-
-function mouseReleased() {
-  if (state == 0) {
-    state = 1;
-  }
-}
+// 
+// function mouseReleased() {
+//   if (state == 0) {
+//     state = 1;
+//   }
+// }
 
 function touchStarted() {
   getAudioContext().resume();
