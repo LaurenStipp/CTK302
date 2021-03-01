@@ -10,7 +10,7 @@ let forest;
 let slug1, slug1awake, slug2, slug2awake, slug3, slug3awake;
 
 function setup() {
-  createCanvas(500, 500);
+  createCanvas(400,400);
   mic = new p5.AudioIn();
   mic.start();
 
@@ -65,7 +65,7 @@ function draw() {
       image(rock, width / 2 - 130, height / 2 - 180, 390, 490);
       text("It was a rock that caught your eye.\nYou notice there's something underneath it.", width / 2, height / 2 - 200);
       text("Tap the rock to find out what's underneath", width / 2, height / 2 + 220);
-      if ((mouseX > width / 2 - 100) && (mouseX < width / 2 + 100) && (mouseY > height - 200) && (mouseY < height - 100)) {
+      if ((mouseX > width / 2 - 200) && (mouseX < width / 2 + 200) && (mouseY > height - 200) && (mouseY < height - 200)) {
         if (touch == 1) {
           state = 2;
         }
