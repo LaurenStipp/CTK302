@@ -10,7 +10,7 @@ let forest;
 let slug1, slug1awake, slug2, slug2awake, slug3, slug3awake;
 
 function setup() {
-  createCanvas(300,300);
+  createCanvas(400,400);
   mic = new p5.AudioIn();
   mic.start();
 
@@ -51,7 +51,7 @@ function draw() {
       noStroke();
       rect(0, 300, 500, 80);
       pop();
-      image(forest, -85, 20, 410,300);
+      image(forest, -85, 20, 510,400);
       timer++;
       if (timer > 3 * 80) {
         state = 1;
