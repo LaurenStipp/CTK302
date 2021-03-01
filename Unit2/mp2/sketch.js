@@ -45,7 +45,7 @@ function draw() {
       x += 2;
       if (x > width + 300) {
         x = -500;
-      },
+      }
       push();
       fill(76, 166, 76);
       noStroke();
