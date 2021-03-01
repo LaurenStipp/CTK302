@@ -65,7 +65,7 @@ function draw() {
       image(rock, width / 2 - 130, height / 2 - 180, 390, 490);
       text("It was a rock that caught your eye.\nYou notice there's something underneath it.", width / 2, height / 2 - 200);
       text("Tap the rock to find out what's underneath", width / 2, height / 2 + 220);
-      if ((mouseX > width / 2 - 50) && (mouseX < width / 2 + 50) && (mouseY > height - 100) && (mouseY < height - 50)) {
+      if ((mouseX > width / 2 - 100) && (mouseX < width / 2 + 100) && (mouseY > height - 200) && (mouseY < height - 100)) {
         if (touch == 1) {
           state = 2;
         }
