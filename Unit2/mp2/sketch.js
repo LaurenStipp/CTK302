@@ -44,7 +44,7 @@ function draw() {
       pop();
       x += 2;
       if (x > width + 300) {
-        x = -500;
+        x = -400;
       }
       push();
       fill(76, 166, 76);
