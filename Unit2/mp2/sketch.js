@@ -52,11 +52,11 @@ function draw() {
       rect(0, 300, 500, 80);
       pop();
       image(forest, -85, 20, 410,300);
-      // timer++;
-      // if (timer > 3 * 80) {
-      //   state = 1;
-      //   timer = 0;
-      // }
+      timer++;
+      if (timer > 3 * 80) {
+        state = 1;
+        timer = 0;
+      }
       break;
 
     case 1:
@@ -65,20 +65,20 @@ function draw() {
       image(rock, width / 2 - 130, height / 2-150, 290,390);
       text("It was a rock that caught your eye.\nYou notice there's something underneath it.", width / 2, height / 2 - 180);
       text("Tap the rock to find out what's underneath", width / 2, height / 2+180);
-      // if ((mouseX > width / 2) && (mouseX < width / 2) && (mouseY > height) && (mouseY < height)) {
-      //   if (touch == 1) {
-      //     state = 2;
-      //   }
-      // }
+      if ((mouseX > width / 2) && (mouseX < width / 2) && (mouseY > height) && (mouseY < height)) {
+        if (touch == 1) {
+          state = 2;
+        }
+      }
       break;
 
     case 2:
       //scream at the slugs to continue
       background(87, 171, 78);
-      // vol = (mic.getLevel()).toFixed(2);
-      // if (vol > .5) {
-      //   state = 3;
-      // }
+      vol = (mic.getLevel()).toFixed(2);
+      if (vol > .5) {
+        state = 3;
+      }
       textSize(18);
       // text("You found some slugs that are sleeping.\nScream to wake the slugs." + vol, width / 2, height / 2);
       text("You found some slugs that are sleeping.\nScream to wake the slugs.", width / 2, height / 2-180);
@@ -94,11 +94,11 @@ function draw() {
       image(slug1awake, width / 2 - 130, height / 2 - 90, 100, 200);
       image(slug2awake, width / 2 - 100, height / 2+45, 250, 150); //fixed
       image(slug3awake, width / 2 - 45, height / 2 - 110, 150, 160);
-      // timer++;
-      // if (timer > 3 * 80) {
-      //   state = 0;
-      //   timer = 0;
-      // }
+      timer++;
+      if (timer > 3 * 80) {
+        state = 0;
+        timer = 0;
+      }
       break;
   }
 }
@@ -110,12 +110,12 @@ function clouds() {
   image(cloud2, -350, 100, 130, 70);
 }
 
-function mouseReleased() {
-  state = state + 1;
-  if (state > 3) {
-    state = 0;
-  }
-}
+// function mouseReleased() {
+//   state = state + 1;
+//   if (state > 3) {
+//     state = 0;
+//   }
+// }
 
 function touchStarted() {
   getAudioContext().resume();
