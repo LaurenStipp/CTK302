@@ -99,7 +99,7 @@ function draw() {
       //scream at the slugs to continue
       background(87, 171, 78);
       vol = (mic.getLevel()).toFixed(2);
-      if (vol > .5) {
+      if (vol > .9) {
         state = 4;
       }
       textSize(18);
