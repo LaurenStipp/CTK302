@@ -120,6 +120,7 @@ function draw() {
 
     case 5:
       background(87, 171, 78);
+      slugs.pause();
       textSize(18);
       image(grass1, width/2 -200,height/2-100, 100,100);
       image(grass2, width/2+100,height/2+80, 100,100);
