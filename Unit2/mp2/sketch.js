@@ -18,7 +18,6 @@ function preload() {
   slugs = loadSound("assets/slugs.wav");
   birds = loadSound("assets/birds.wav");
 
-  slugs.loop();
   slugs.pause();
   birds.loop();
   birds.pause();
@@ -75,7 +74,7 @@ function draw() {
       pop();
       image(forest, -85, 20, 510, 400);
       timer++;
-      if (timer > 3 * 80) {
+      if (timer > 3 * 90) {
         state = 2;
         timer = 0;
       }
@@ -85,8 +84,8 @@ function draw() {
       //touch the rock to continue
       background(76, 166, 76);
       image(rock, width / 2 - 130, height / 2 - 150, 290, 390);
-      image(grass1, width/2 -200,height/2-100, 100,100);
-      image(grass2, width/2+100,height/2+80, 100,100);
+      image(grass1, width / 2 - 200, height / 2 - 100, 100, 100);
+      image(grass2, width / 2 + 100, height / 2 + 80, 100, 100);
       text("It was a rock that caught your eye.\nYou notice there's something underneath it.", width / 2, height / 2 - 180);
       text("Tap the rock to find out what's underneath", width / 2, height / 2 + 180);
       if ((mouseX > width / 2 - 130) && (mouseX < width / 2 + 130) && (mouseY > height / 2 - 150) && (mouseY < height / 2 + 150)) {
@@ -104,8 +103,8 @@ function draw() {
         state = 4;
       }
       textSize(18);
-      image(grass1, width/2 -200,height/2-100, 100,100);
-      image(grass2, width/2+100,height/2+80, 100,100);
+      image(grass1, width / 2 - 200, height / 2 - 100, 100, 100);
+      image(grass2, width / 2 + 100, height / 2 + 80, 100, 100);
       // text("You found some slugs that are sleeping.\nScream to wake the slugs." + vol, width / 2, height / 2);
       text("You found some slugs that are sleeping.\nScream to wake the slugs.", width / 2, height / 2 - 180);
       image(slug1, width / 2 - 130, height / 2 - 90, 100, 200);
@@ -114,22 +113,22 @@ function draw() {
       break;
 
     case 4:
+      birds.pause();
       slugs.play();
       state = 5;
       break;
 
     case 5:
       background(87, 171, 78);
-      slugs.pause();
       textSize(18);
-      image(grass1, width/2 -200,height/2-100, 100,100);
-      image(grass2, width/2+100,height/2+80, 100,100);
+      image(grass1, width / 2 - 200, height / 2 - 100, 100, 100);
+      image(grass2, width / 2 + 100, height / 2 + 80, 100, 100);
       text("You woke the slugs up!\nGood job, now you are a jerk.", width / 2, height / 2 - 180);
       image(slug1awake, width / 2 - 130, height / 2 - 90, 100, 200);
       image(slug2awake, width / 2 - 100, height / 2 + 45, 250, 150); //fixed
       image(slug3awake, width / 2 - 45, height / 2 - 110, 150, 160);
       timer++;
-      if (timer > 3 * 80) {
+      if (timer > 3 * 90) {
         state = 0;
         timer = 0;
       }
@@ -146,7 +145,7 @@ function clouds() {
 
 // function mouseReleased() {
 //   state = state + 1;
-//   if (state > 3) {
+//   if (state > 4) {
 //     state = 0;
 //   }
 // }
