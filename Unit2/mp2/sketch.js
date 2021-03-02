@@ -18,10 +18,10 @@ function preload() {
   slugs = loadSound("assets/slugs.wav");
   birds = loadSound("assets/birds.wav");
 
-  // slugs.loop();
-  // slugs.pause();
-  // birds.loop();
-  // birds.pause();
+  slugs.loop();
+  slugs.pause();
+  birds.loop();
+  birds.pause();
 }
 
 function setup() {
