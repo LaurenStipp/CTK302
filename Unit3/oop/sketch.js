@@ -2,32 +2,14 @@ let cars = [];
 let frogPos;
 let state = 0;
 let timer = 0;
-let maxCars = 10; //changes the # of cars/objects
-let maxTimer = 11; //changes the timer ammount
+let maxCars = 5; //changes the # of cars/objects
+let maxTimer = 10; //changes the timer ammount
+
 let title_screen, game_screen, win_screen, lose_screen;
 let icicle, snowball;
 let yeti;
-let title, gmus, win, lose;
-
-function preload() {
-  title = loadSound("assets/title.mp3");
-  gmus = loadSound("assets/game.mp3");
-  win = loadSound("assets/win.mp3");
-  lose = loadSound("assets/lose.mp3");
-
-  title.loop();
-  title.pause();
-  gmus.loop();
-  gmus.pause();
-  win.loop();
-  win.pause();
-  lose.loop();
-  lose.pause();
-
-}
 
 function setup() {
-
   createCanvas(960, 540);
 
   title_screen = loadImage("assets/title_screen.jpg");
@@ -38,82 +20,60 @@ function setup() {
   snowball = loadImage("assets/snowball.png");
   yeti = loadImage("assets/yeti.png");
   imageMode(CENTER);
+  // Spawn an object
 
-  for (let i = 0; i < maxCars; i++) {
+  for (let i = 0; i < 40; i++) {
     cars.push(new Car());
   }
 
-  frogPos = createVector(width / 2, height - 100);
+frogPos = createVector(width / 2, height - 100);
 
 }
 
 function draw() {
   switch (state) {
-    case -1:
-      title.loop();
-      state = 0;
-      break;
+    // case -1:
+    // title.loop();
+    // state = 0;
+    // break;
 
     case 0:
       image(title_screen, width / 2, height / 2, 960, 540);
       break;
 
     case 1:
-      gmus.loop();
-      state = 2;
-      break;
-
-    case 2:
       game();
       timer++;
       if (timer > maxTimer * 60) {
         timer = 0;
-        state = 5;
+        state = 3;
       }
       break;
 
-    case 3:
-      gmus.stop();
-      win.loop();
-      state = 4;
-      break;
-
-    case 4:
-      gmus.stop();
+    case 2:
       image(win_screen, width / 2, height / 2, 960, 540);
       break;
 
-    case 5:
-      gmus.stop();
-      lose.loop();
-      state = 6;
-      break;
-
-    case 6:
+    case 3:
       image(lose_screen, width / 2, height / 2, 960, 540);
       break;
   }
-
 }
 
 function mouseReleased() {
   switch (state) {
     case 0:
-      title.stop();
       state = 1;
       break;
 
-    case 4: //won;reset the game
+    case 2: //won;reset the game
+      state = 0;
       reset();
-      gmus.stop();
-      win.stop();
-      state = -1;
       break;
 
-    case 6: //lost;reset the game
+    case 3: //lost;reset the game
+      state = 0;
       reset();
-      lose.stop();
-      state = -1;
       break;
   }
 }
@@ -129,27 +89,25 @@ function reset() {
 function game() {
   image(game_screen, width / 2, height / 2, 960, 540);
 
+  // for (let i = 0; i < cars.length; i++) {
+  //   cars[i].display();
+  //   cars[i].move();
+  // }
   for (let i = 0; i < cars.length; i++) {
     cars[i].display();
     cars[i].move();
-    if (cars[i].pos.dist(frogPos) < 50) {
+    if (cars[i].a <=0 ){
       cars.splice(i, 1);
     }
   }
 
   if (cars.length == 0) {
-    state = 4;
+    state = 2;
   }
 
-  image(yeti, frogPos.x, frogPos.y, 150, 150);
   checkForKeys();
+  image(yeti, frogPos.x,frogPos.y,100,100);
 }
-
-//keycodes for AWSD
-//A = 65 - left
-//W = 87 - up
-//S = 83 - down
-//D = 68 - right
 
 function checkForKeys() {
   if (keyIsDown(LEFT_ARROW)) frogPos.x -= 5;
@@ -163,20 +121,24 @@ function checkForKeys() {
   if (frogPos.y < 0) frogPos.y = height;
 }
 
+// Car class
 class Car {
+
+  // constructor and attributes
   constructor() {
     this.pos = createVector(100, 100);
     this.vel = createVector(random(-5, 5), random(-5, 5));
-    this.type = random(1);
+    this.col = color(random(255), random(255), random(255));
+    this.width = random(30, 70);
   }
 
   // methods
+
   display() {
-    if (this.type < 0.5) {
-      image(icicle, this.pos.x, this.pos.y, 40, 50);
-    } else {
-      image(snowball, this.pos.x, this.pos.y, 50, 40);
-    }
+    fill(this.col);
+    //  rect(this.pos.x, this.pos.y, this.width, 25);
+    textSize(this.width) ;
+    text("WOOHOO", this.pos.x, this.pos.y);
   }
 
   move() {
@@ -188,8 +150,4 @@ class Car {
 
   }
 
-}
-
-function touchStarted() {
-  getAudioContext().resume();
 }

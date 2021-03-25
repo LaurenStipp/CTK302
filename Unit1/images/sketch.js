@@ -1,6 +1,5 @@
 
 let ducky, appa, snuggle;
-
 function setup() {
 
   createCanvas(800, 800);
