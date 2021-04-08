@@ -13,7 +13,7 @@ var sunny,tstorm,rain,fclouds,bclouds,srain,snow,fog,sclouds;
 
 
 function setup() {
-  createCanvas(600,600);
+  createCanvas(800,600);
   // textSize(20);
   f1 = loadFont("assets/staatliches.ttf");
 
