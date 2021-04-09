@@ -58,7 +58,7 @@ class Bubble {
     this.show = myShow;
     this.defeat = myDefeat;
     this.theme = myTheme;
-    this.pos = createVector(random(width), random(height));
+    this.pos = createVector(random(width),random(height));
     this.vel = createVector(random(5),0);
   }
 
@@ -89,7 +89,7 @@ class Bubble {
 
   move() {
     this.pos.add(this.vel);
-    if (this.pos.x > width) this.pos.x =0;
+    if (this.pos.y > height) this.pos.y = height;
   }
 
 }

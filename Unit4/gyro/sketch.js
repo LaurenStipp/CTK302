@@ -1,6 +1,7 @@
 /* For mobile phones - accesses accelerometer and gyroscope.
 Make sure you turn on orientation lock on your iPhone or Android device. */
-
+//idea: marbles
+//jfklej;lkafje;lkajf;e
 let alpha = 0, beta = 0 , gamma = 0; // gyroscope variablers
 let bunnyImage;
 let xPosition = 0;
