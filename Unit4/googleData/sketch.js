@@ -41,7 +41,7 @@ function gotData(data) {
 
 function draw() {
   background('blue');
-
+    //background will be generic marvel theme
   // // iterate through the bubbles and display the objects!
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].display();
@@ -64,6 +64,13 @@ class Bubble {
 
 
   display() {
+
+    //show if statement
+    //wanda vision - display text in different font
+    //the falcon and the winter soldier - display text in different font
+
+    //decade theme song changes the tv style to that decade. 70's theme goes with 70's style tv.
+
     // if (this.shape == "Square") {
     //   rect(this.pos.x, this.pos.y, 50, 50);
     // } else {
