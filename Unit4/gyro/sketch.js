@@ -41,7 +41,7 @@ function draw() {
 
   // image(bunnyImage, 0, 0, 500, 500);
   // image(mushroom, 0, 0, 500, 500);
-  image(omarble, 0, 0, 200,200);
+  image(omarble, 0, 0, 300,300);
   // rect(0, 0, 100, 100) ;
   pop();
 
