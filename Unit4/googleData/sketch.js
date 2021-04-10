@@ -1,7 +1,11 @@
 var bubbles = [];
+//fonts
+let arm, ref,op;
+
+//background
+let marvel;
 
 function setup() {
-
   // Tabletop stuff, for getting google spreadsheet data in.
   // let url = '1GtE3eoYVWBv9zMPoyettXzDCEv6qdNGKio_hgEh5duM'; // this is KEY of the URL from the sheet
   let url = '1BPDaxH1Z2aj5lVAn1sRDHCoiYM9kUwyyJXnQgk69qrY';
@@ -18,11 +22,16 @@ function setup() {
 
 
   // Regular setup code we usually have
-  createCanvas(600, 600);
+  createCanvas(760,475);
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
 
+  arm = loadFont("assets/armstrong.otf");
+  ref = loadFont("assets/refrigerator.otf");
+  op = loadFont("assets/op.ttf");
+
+  marvel = loadImage("assets/background.jpg");
 }
 
 // The data comes back as an array of objects
@@ -40,8 +49,8 @@ function gotData(data) {
 
 
 function draw() {
-  background('blue');
-
+  // background('blue');
+  image(marvel,0,0, 760,475);
   // // iterate through the bubbles and display the objects!
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].display();
@@ -64,32 +73,69 @@ class Bubble {
 
 
   display() {
-    // if (this.shape == "Square") {
-    //   rect(this.pos.x, this.pos.y, 50, 50);
-    // } else {
-    //   ellipse(this.pos.x, this.pos.y, 50, 50);
-    // }
+
     if (this.show == "WandaVision") {
       push()
+      noStroke();
       fill('red');
       ellipse(this.pos.x, this.pos.y,80,80);
       pop()
+    } else if (this.show  == "The Falcon and the Winter Soldier") {
+      push()
+      noStroke();
+      fill('pink');
+      rect(this.pos.x, this.pos.y,200,80);
+      pop()
     } else {
       push()
+      noStroke();
       fill('black');
-      rect(this.pos.x, this.pos.y,80,80);
+      rect(this.pos.x, this.pos.y,120,75);
       pop()
     }
 
     fill('white');
-    text(this.show, this.pos.x, this.pos.y-20);
+    if (this.show == "WandaVision") {
+      textFont(arm,20);
+      text(this.show, this.pos.x, this.pos.y-20);
+    } else if (this.show == "The Falcon and the Winter Soldier") {
+      textFont(ref,15);
+      text(this.show, this.pos.x, this.pos.y-20);
+    } else {
+      textFont(op,14);
+      text(this.show, this.pos.x, this.pos.y-20);
+    }
+
+    // text(this.show, this.pos.x, this.pos.y-20);
+    push();
+    textFont(op,14);
     text(this.defeat, this.pos.x, this.pos.y);
+    pop();
+    push();
+    textFont(op,14);
     text(this.theme, this.pos.x, this.pos.y+20);
+    pop();
   }
 
   move() {
+    //This option will not move
     this.pos.add(this.vel);
-    if (this.pos.y > height) this.pos.y = height;
+    if (this.show == "Have Not Seen Either") {
+      this.vel = 0;
+    }
+
+    if (this.pos.x >width){
+      this.pos.x = 0;
+    }
+
+    //This option will travel right to left
+    if (this.show == "The Falcon and the Winter Soldier") {
+      this.pos.x = this.pos.x - 4;
+      if (this.pos.x < width-800) {
+        this.pos.x = width;
+        this.pos.x = this.pos.x-4;
+      }
+    }
   }
 
 }
