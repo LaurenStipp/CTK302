@@ -19,10 +19,10 @@ function setup() {
 
   // bunnyImage = loadImage("assets/bunny.jpg");
   omarble = loadImage("assets/orange_marble.png");
-  pimarble = loadImage("assets/pink_marble.png");
-  bmarble = loadImage("assets/blue_marble.png");
-  ymarble = loadImage("assets/yellow_marble.png");
-  pumarble = loadImage("assets/purple_marble.png");
+  // pimarble = loadImage("assets/pink_marble.png");
+  // bmarble = loadImage("assets/blue_marble.png");
+  // ymarble = loadImage("assets/yellow_marble.png");
+  // pumarble = loadImage("assets/purple_marble.png");
 
   imageMode(CENTER);
   rectMode(CENTER);
@@ -31,7 +31,7 @@ function setup() {
 
 function draw() {
 
-  background('#c6f5ff'); // light blue
+  background(100); // light blue
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -46,11 +46,11 @@ function draw() {
   rotate(radians(alpha)); // rotate the bunny depending on the alpha intake
 
   // image(bunnyImage, 0, 0, 500, 500);
-  image(omarble,width/2,height/2,20,20);
-  image(pimarble,0,0,20,20);
-  image(bmarble,20,20,20,20);
-  image(ymarble,60,60,20,20);
-  image(pumarble,5,5,20,20);
+  image(omarble,width/2,height/2,50,50);
+  // image(pimarble,0,0,20,20);
+  // image(bmarble,20,20,20,20);
+  // image(ymarble,60,60,20,20);
+  // image(pumarble,5,5,20,20);
   // rect(0, 0, 100, 100) ;
   pop();
 
