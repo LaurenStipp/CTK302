@@ -4,6 +4,10 @@ let arm, ref,op;
 
 //background
 let marvel;
+let tv50;
+
+//red #F0131E
+//white #FFFFFF
 
 function setup() {
   // Tabletop stuff, for getting google spreadsheet data in.
@@ -32,6 +36,8 @@ function setup() {
   op = loadFont("assets/op.ttf");
 
   marvel = loadImage("assets/background.jpg");
+
+  tv50 = loadImage("assets/50tv.jpg");
 }
 
 // The data comes back as an array of objects
@@ -77,8 +83,11 @@ class Bubble {
     if (this.show == "WandaVision") {
       push()
       noStroke();
-      fill('red');
-      ellipse(this.pos.x, this.pos.y,80,80);
+      // fill('red');
+      // ellipse(this.pos.x, this.pos.y,80,80);
+      if (this.theme == "50's") {
+        image(tv50,this.pos.x,this.pos.y,1000,1000);
+      }
       pop()
     } else if (this.show  == "The Falcon and the Winter Soldier") {
       push()
@@ -115,6 +124,7 @@ class Bubble {
     textFont(op,14);
     text(this.theme, this.pos.x, this.pos.y+20);
     pop();
+
   }
 
   move() {

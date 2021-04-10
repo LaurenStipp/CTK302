@@ -9,7 +9,6 @@ let xPosition = 0;
 let yPosition = 0;
 
 
-
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
@@ -64,7 +63,6 @@ function draw() {
   textSize(30);
   textAlign(CENTER);
   text("Roll the marble around", width / 2, height / 2);
-
 }
 
 
