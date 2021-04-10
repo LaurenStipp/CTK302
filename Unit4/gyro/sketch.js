@@ -1,29 +1,23 @@
 /* For mobile phones - accesses accelerometer and gyroscope.
 Make sure you turn on orientation lock on your iPhone or Android device. */
-//idea: marbles
-//jfklej;lkafje;lkajf;e
-let alpha = 0, beta = 0 , gamma = 0; // gyroscope variablers
+
+let alpha = 0, beta = 0 , gamma = 0; // gyroscope variables
+let x = 0.0, y = 0.0, z = 0.0 ; // accelerometer variables
 // let bunnyImage;
+// let mushroom;
 let omarble;
-// let omarble, pimarble, bmarble, ymarble, pumarble;
 let xPosition = 0;
 let yPosition = 0;
-let x = 0, y = 0, z = 0 ; // accelerometer data
+
 
 
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
-
-
   // bunnyImage = loadImage("assets/bunny.jpg");
+  // mushroom = loadImage("assets/mushroom.png");
   omarble = loadImage("assets/orange_marble.png");
-  // pimarble = loadImage("assets/pink_marble.png");
-  // bmarble = loadImage("assets/blue_marble.png");
-  // ymarble = loadImage("assets/yellow_marble.png");
-  // pumarble = loadImage("assets/purple_marble.png");
-
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -31,7 +25,7 @@ function setup() {
 
 function draw() {
 
-  background(100); // light blue
+  background('#c6f5ff'); // light blue
 
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
@@ -46,11 +40,8 @@ function draw() {
   rotate(radians(alpha)); // rotate the bunny depending on the alpha intake
 
   // image(bunnyImage, 0, 0, 500, 500);
-  image(omarble,width/2,height/2,50,50);
-  // image(pimarble,0,0,20,20);
-  // image(bmarble,20,20,20,20);
-  // image(ymarble,60,60,20,20);
-  // image(pumarble,5,5,20,20);
+  // image(mushroom, 0, 0, 500, 500);
+  image(omarble, 0, 0, 200,200);
   // rect(0, 0, 100, 100) ;
   pop();
 
