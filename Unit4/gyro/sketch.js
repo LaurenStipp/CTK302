@@ -3,9 +3,8 @@ Make sure you turn on orientation lock on your iPhone or Android device. */
 
 let alpha = 0, beta = 0 , gamma = 0; // gyroscope variables
 let x = 0.0, y = 0.0, z = 0.0 ; // accelerometer variables
-// let bunnyImage;
-// let mushroom;
-let omarble,bmarble;
+
+let bmarble,wood;
 let xPosition = 0;
 let yPosition = 0;
 
@@ -15,10 +14,8 @@ function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
-  // bunnyImage = loadImage("assets/bunny.jpg");
-  // mushroom = loadImage("assets/mushroom.png");
-  omarble = loadImage("assets/orange_marble.png");
   bmarble = loadImage("assets/blue_marble.png");
+  wood = loadImage("assets/background.jpg");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -26,8 +23,8 @@ function setup() {
 
 function draw() {
 
-  background('#c6f5ff'); // light blue
-
+  // background('#c6f5ff'); // light blue
+  image(wood,0,0,windowWidth,windowHeight);
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
   // map(yourVar, range1_x, range1_y, range2_x, range2_y) ;
@@ -42,8 +39,7 @@ function draw() {
 
   // image(bunnyImage, 0, 0, 500, 500);
   // image(mushroom, 0, 0, 500, 500);
-  image(omarble, 2,2, 100,100);
-  image(bmarble, 2,2, 100,100);
+  image(bmarble, 2,2, 150,150);
   // rect(0, 0, 100, 100) ;
   pop();
 
