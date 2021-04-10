@@ -37,7 +37,7 @@ function draw() {
 
   // image(bunnyImage, 0, 0, 500, 500);
   // image(mushroom, 0, 0, 500, 500);
-  image(bmarble, width/2,height/2, 150,150);
+  image(bmarble, 0,0, 150,150);
   // rect(0, 0, 100, 100) ;
   pop();
 
@@ -59,11 +59,11 @@ function draw() {
   text("z = " + z.toFixed(4), 25, 190);
 
   // Text that makes CTK type in the background
-  // fill('white');
-  // noStroke();
-  // textSize(300);
-  // textAlign(CENTER);
-  // text("ctk", width / 2, height / 2);
+  fill('white');
+  noStroke();
+  textSize(300);
+  textAlign(CENTER);
+  text("Roll the marble around", width / 2, height / 2);
 
 }
 
