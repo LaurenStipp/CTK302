@@ -67,9 +67,9 @@ function draw() {
   textSize(20);
   text("acceleration data:", 25, 125);
   textSize(15);
-  // text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
-  // text("y = " + y.toFixed(2), 25, 170);
-  // text("z = " + z.toFixed(4), 25, 190);
+  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
+  text("y = " + y.toFixed(2), 25, 170);
+  text("z = " + z.toFixed(4), 25, 190);
 
   // Text that makes CTK type in the background
   // fill('white');
