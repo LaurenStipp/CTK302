@@ -5,7 +5,7 @@ let alpha = 0, beta = 0 , gamma = 0; // gyroscope variables
 let x = 0.0, y = 0.0, z = 0.0 ; // accelerometer variables
 // let bunnyImage;
 // let mushroom;
-let omarble;
+let omarble,bmarble;
 let xPosition = 0;
 let yPosition = 0;
 
@@ -18,6 +18,7 @@ function setup() {
   // bunnyImage = loadImage("assets/bunny.jpg");
   // mushroom = loadImage("assets/mushroom.png");
   omarble = loadImage("assets/orange_marble.png");
+  bmarble = loadImage("assets/blue_marble.png");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -41,7 +42,8 @@ function draw() {
 
   // image(bunnyImage, 0, 0, 500, 500);
   // image(mushroom, 0, 0, 500, 500);
-  image(omarble, 2,2, 100.100);
+  image(omarble, 2,2, 100,100);
+  image(bmarble, 2,2, 100,100);
   // rect(0, 0, 100, 100) ;
   pop();
 
