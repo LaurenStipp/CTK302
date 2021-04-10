@@ -3,7 +3,9 @@ Make sure you turn on orientation lock on your iPhone or Android device. */
 //idea: marbles
 //jfklej;lkafje;lkajf;e
 let alpha = 0, beta = 0 , gamma = 0; // gyroscope variablers
-let bunnyImage;
+// let bunnyImage;
+let omarble;
+// let omarble, pimarble, bmarble, ymarble, pumarble;
 let xPosition = 0;
 let yPosition = 0;
 let x = 0, y = 0, z = 0 ; // accelerometer data
@@ -15,7 +17,13 @@ function setup() {
 
 
 
-  bunnyImage = loadImage("assets/bunny.jpg");
+  // bunnyImage = loadImage("assets/bunny.jpg");
+  omarble = loadImage("assets/orange_marble.png");
+  // pimarble = loadImage("assets/pink_marble.png");
+  // bmarble = loadImage("assets/blue_marble.png");
+  // ymarble = loadImage("assets/yellow_marble.png");
+  // pumarble = loadImage("assets/purple_marble.png");
+
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -37,7 +45,12 @@ function draw() {
 
   rotate(radians(alpha)); // rotate the bunny depending on the alpha intake
 
-  image(bunnyImage, 0, 0, 500, 500);
+  // image(bunnyImage, 0, 0, 500, 500);
+  image(omarble,width/2,height/2,20,20);
+  // image(pimarble,width/2,height/2,20,20);
+  // image(bmarble,width/2,height/2,20,20);
+  // image(ymarble,width/2,height/2,20,20);
+  // image(pumarble,width/2,height/2,20,20);
   // rect(0, 0, 100, 100) ;
   pop();
 
@@ -54,16 +67,16 @@ function draw() {
   textSize(20);
   text("acceleration data:", 25, 125);
   textSize(15);
-  text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
-  text("y = " + y.toFixed(2), 25, 170);
-  text("z = " + z.toFixed(4), 25, 190);
+  // text("x = " + x.toFixed(2), 25, 150); // .toFixed means just show (x) decimal places
+  // text("y = " + y.toFixed(2), 25, 170);
+  // text("z = " + z.toFixed(4), 25, 190);
 
   // Text that makes CTK type in the background
-  fill('white');
-  noStroke();
-  textSize(300);
-  textAlign(CENTER);
-  text("ctk", width / 2, height / 2);
+  // fill('white');
+  // noStroke();
+  // textSize(300);
+  // textAlign(CENTER);
+  // text("ctk", width / 2, height / 2);
 
 }
 
