@@ -19,10 +19,10 @@ function setup() {
 
   // bunnyImage = loadImage("assets/bunny.jpg");
   omarble = loadImage("assets/orange_marble.png");
-  // pimarble = loadImage("assets/pink_marble.png");
-  // bmarble = loadImage("assets/blue_marble.png");
-  // ymarble = loadImage("assets/yellow_marble.png");
-  // pumarble = loadImage("assets/purple_marble.png");
+  pimarble = loadImage("assets/pink_marble.png");
+  bmarble = loadImage("assets/blue_marble.png");
+  ymarble = loadImage("assets/yellow_marble.png");
+  pumarble = loadImage("assets/purple_marble.png");
 
   imageMode(CENTER);
   rectMode(CENTER);
@@ -47,10 +47,10 @@ function draw() {
 
   // image(bunnyImage, 0, 0, 500, 500);
   image(omarble,width/2,height/2,20,20);
-  // image(pimarble,width/2,height/2,20,20);
-  // image(bmarble,width/2,height/2,20,20);
-  // image(ymarble,width/2,height/2,20,20);
-  // image(pumarble,width/2,height/2,20,20);
+  image(pimarble,0,0,20,20);
+  image(bmarble,20,20,20,20);
+  image(ymarble,60,60,20,20);
+  image(pumarble,5,5,20,20);
   // rect(0, 0, 100, 100) ;
   pop();
 
