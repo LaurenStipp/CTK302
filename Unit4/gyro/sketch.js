@@ -37,7 +37,7 @@ function draw() {
 
   // image(bunnyImage, 0, 0, 500, 500);
   // image(mushroom, 0, 0, 500, 500);
-  image(bmarble, 0,0, 150,150);
+  image(bmarble, width/2,height/2, 150,150);
   // rect(0, 0, 100, 100) ;
   pop();
 
