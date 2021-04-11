@@ -28,7 +28,7 @@ function setup() {
 
 
   // Regular setup code we usually have
-  createCanvas(760,475);
+  createCanvas(1520,950);
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
@@ -59,7 +59,8 @@ function gotData(data) {
 
 function draw() {
   // background('blue');
-  image(marvel,0,0, 760,475);
+  // image(marvel,0,0, 760,475);
+  image(marvel,0,0, 1520,950);
   // // iterate through the bubbles and display the objects!
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].display();
@@ -89,7 +90,7 @@ class Bubble {
       // fill('red');
       // ellipse(this.pos.x, this.pos.y,80,80);
       if (this.theme == "50's") {
-        image(tv50,this.pos.x,this.pos.y,1000,1000);
+        image(tv50,this.pos.x-90,this.pos.y-80,180,220);
       }
       pop()
     } else if (this.show  == "The Falcon and the Winter Soldier") {
