@@ -4,6 +4,8 @@ let arm, ref,op;
 
 //background
 let marvel;
+
+//tvs
 let tv50;
 
 //red #F0131E
@@ -37,7 +39,8 @@ function setup() {
 
   marvel = loadImage("assets/background.jpg");
 
-  tv50 = loadImage("assets/50tv.jpg");
+  //all tvs are png!!
+  tv50 = loadImage("assets/50tv.png");
 }
 
 // The data comes back as an array of objects
