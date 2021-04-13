@@ -8,6 +8,9 @@ let marvel;
 //tvs
 let tv50;
 
+//symbols
+let no;
+let yes;
 //red #F0131E
 //white #FFFFFF
 
@@ -28,7 +31,8 @@ function setup() {
 
 
   // Regular setup code we usually have
-  createCanvas(1520,950);
+  // createCanvas(1520,950);
+  createCanvas(800,800);
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
@@ -41,6 +45,10 @@ function setup() {
 
   //all tvs are png!!
   tv50 = loadImage("assets/50tv.png");
+
+  //symbols
+  yes = loadImage("assets/us_agent_sym.png");
+  no = loadImage("assets/bucky_sam_sym.png");
 }
 
 // The data comes back as an array of objects
@@ -58,9 +66,9 @@ function gotData(data) {
 
 
 function draw() {
-  // background('blue');
+  background('blue');
   // image(marvel,0,0, 760,475);
-  image(marvel,0,0, 1520,950);
+  // image(marvel,0,0, 1520,950);
   // // iterate through the bubbles and display the objects!
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].display();
@@ -83,7 +91,6 @@ class Bubble {
 
 
   display() {
-
     if (this.show == "WandaVision") {
       push()
       noStroke();
@@ -107,6 +114,16 @@ class Bubble {
       pop()
     }
 
+    if (this.defeat == "Yes") {
+      textFont(op,14);
+      text(this.defeat, this.pos.x, this.pos.y);
+      image(yes, this.pos.x+10,this.pos.y-15, 20,20);
+    } else {
+      textFont(op,14);
+      text(this.defeat, this.pos.x, this.pos.y);
+      image(no, this.pos.x+10,this.pos.y-15, 20,20);
+    }
+
     fill('white');
     if (this.show == "WandaVision") {
       textFont(arm,20);
@@ -120,10 +137,10 @@ class Bubble {
     }
 
     // text(this.show, this.pos.x, this.pos.y-20);
-    push();
-    textFont(op,14);
-    text(this.defeat, this.pos.x, this.pos.y);
-    pop();
+    // push();
+    // textFont(op,14);
+    // text(this.defeat, this.pos.x, this.pos.y);
+    // pop();
     push();
     textFont(op,14);
     text(this.theme, this.pos.x, this.pos.y+20);
