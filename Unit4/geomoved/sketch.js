@@ -1,5 +1,5 @@
 var num ;
-var distance ;
+var distance; 
 
 var locationData;
 function preload(){

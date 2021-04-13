@@ -1,21 +1,19 @@
 /* For mobile phones - accesses accelerometer and gyroscope.
 Make sure you turn on orientation lock on your iPhone or Android device. */
-//idea: marbles
-//jfklej;lkafje;lkajf;e
-let alpha = 0, beta = 0 , gamma = 0; // gyroscope variablers
-let bunnyImage;
+
+let alpha = 0, beta = 0 , gamma = 0; // gyroscope variables
+let x = 0.0, y = 0.0, z = 0.0 ; // accelerometer variables
+
+let bmarble;
 let xPosition = 0;
 let yPosition = 0;
-let x = 0, y = 0, z = 0 ; // accelerometer data
 
 
 function setup() {
 
   createCanvas(windowWidth, windowHeight);
 
-
-
-  bunnyImage = loadImage("assets/bunny.jpg");
+  bmarble = loadImage("assets/blue_marble.png");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -23,8 +21,7 @@ function setup() {
 
 function draw() {
 
-  background('#c6f5ff'); // light blue
-
+  background('#FFBE86'); // light blue
   // the map command !!!!
   // takes your variable and maps it from range 1 to range 2
   // map(yourVar, range1_x, range1_y, range2_x, range2_y) ;
@@ -37,7 +34,9 @@ function draw() {
 
   rotate(radians(alpha)); // rotate the bunny depending on the alpha intake
 
-  image(bunnyImage, 0, 0, 500, 500);
+  // image(bunnyImage, 0, 0, 500, 500);
+  // image(mushroom, 0, 0, 500, 500);
+  image(bmarble, 0,0, 150,150);
   // rect(0, 0, 100, 100) ;
   pop();
 
@@ -61,10 +60,9 @@ function draw() {
   // Text that makes CTK type in the background
   fill('white');
   noStroke();
-  textSize(300);
+  textSize(30);
   textAlign(CENTER);
-  text("ctk", width / 2, height / 2);
-
+  text("Roll the marble around", width / 2, height / 2);
 }
 
 
