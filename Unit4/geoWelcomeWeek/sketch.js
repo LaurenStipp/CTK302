@@ -6,6 +6,12 @@ var num;
 var distance;
 var places = [];
 var reggieImg;
+var capture;
+var options = {
+  video: {
+    facingMode:"environment"
+  }
+};
 
 function preload() {
   locationData = getCurrentPosition();
@@ -87,6 +93,7 @@ function Place(lat, long, desc, radius, reggieImg) {
 
 
   this.display = function() {
+    capture = createCapture(options);
     image(reggieImg, 10, 10);
     textSize(20);
     text("You are at " + this.desc, 10, 240);
