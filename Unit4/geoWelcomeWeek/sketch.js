@@ -78,7 +78,7 @@ function positionPing(position) {
       break; //should break out of the for loop?
       //text(places[i].desc + ' check1 ' + places[i].fence.insideFence, 10, 240 + (i * 28));
     } else {
-      capture.hide();
+      capture.remove();
     }
   }
 
