@@ -184,10 +184,13 @@ class Bubble {
       // textFont(op,14);
       text(this.defeat, this.pos.x, this.pos.y);
       image(yes, this.pos.x-30,this.pos.y-15, 20,20);
-    } else {
+    } else if (this.defeat == "No") {
       textFont(op,14);
       text(this.defeat, this.pos.x, this.pos.y);
       image(no, this.pos.x+10,this.pos.y-15, 20,20);
+    } else {
+      textFont(op,14);
+      text(this.defeat, this.pos.x, this.pos.y);
     }
 
     fill('white');
