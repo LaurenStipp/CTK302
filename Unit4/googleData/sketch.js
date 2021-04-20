@@ -1,3 +1,5 @@
+//wanted to do a counter but couldn't figure out where to put it where it just kept looping
+
 var bubbles = [];
 //fonts
 let arm, ref,op;
@@ -93,7 +95,7 @@ function draw() {
   pop();
   push();
   // textFont(op,30);
-  let a = createA('https://docs.google.com/forms/d/e/1FAIpQLScJKKB0JMUb81AbePQjwJ0--53Z2_V-wavHqXTM9tQ3LlRLjA/viewform', "Survey");
+  let a = createA('https://docs.google.com/forms/d/e/1FAIpQLScJKKB0JMUb81AbePQjwJ0--53Z2_V-wavHqXTM9tQ3LlRLjA/viewform', "Survey",[_blank]);
   a.position(width/2-87,height/2-270);
   a.style('font-size','60px');
   // a.style('font-family',op);
