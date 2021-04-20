@@ -91,7 +91,7 @@ function draw() {
   pop();
   push();
   textFont(op,20);
-  text("(Click SURVEY below)",width/2,height/2-270);
+  text("(Right-click SURVEY below to open in new tab)",width/2,height/2-270);
   pop();
   push();
   // textFont(op,30);
