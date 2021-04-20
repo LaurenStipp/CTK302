@@ -6,9 +6,12 @@ let arm, ref,op;
 let marvel;
 
 //tvs
-let tv50;
+let tv50,tv60,tv70,tv80,tv90,tv00;
 
 //symbols
+let yesScore=0;
+let noScore=0;
+
 let no;
 let yes;
 //red #F0131E
@@ -32,9 +35,9 @@ function setup() {
 
   // Regular setup code we usually have
   // createCanvas(1520,950);
-  createCanvas(800,800);
+  createCanvas(windowWidth, windowHeight);
   textAlign(CENTER);
-  ellipseMode(CENTER);
+  // ellipseMode(CENTER);
   rectMode(CENTER);
 
   arm = loadFont("assets/armstrong.otf");
@@ -45,6 +48,11 @@ function setup() {
 
   //all tvs are png!!
   tv50 = loadImage("assets/50tv.png");
+  tv60 = loadImage("assets/60tv.png");
+  tv70 = loadImage("assets/70tv.png");
+  tv80 = loadImage("assets/80tv.png");
+  tv90 = loadImage("assets/90tv.png");
+  tv00 = loadImage("assets/00tv.png");
 
   //symbols
   yes = loadImage("assets/us_agent_sym.png");
@@ -68,13 +76,32 @@ function gotData(data) {
 function draw() {
   background('blue');
   // image(marvel,0,0, 760,475);
-  // image(marvel,0,0, 1520,950);
+  image(marvel,0,0, windowWidth,windowHeight);
   // // iterate through the bubbles and display the objects!
   for (let i = 0; i < bubbles.length; i++) {
     bubbles[i].display();
     bubbles[i].move();
   }
 
+  push();
+  textFont(op,50);
+  text("Take the survey to see your response!",width/2,height/2-300);
+  pop();
+  push();
+  textFont(op,20);
+  text("(Click SURVEY below)",width/2,height/2-270);
+  pop();
+  push();
+  // textFont(op,30);
+  let a = createA('https://docs.google.com/forms/d/e/1FAIpQLScJKKB0JMUb81AbePQjwJ0--53Z2_V-wavHqXTM9tQ3LlRLjA/viewform', "Survey");
+  a.position(width/2-87,height/2-270);
+  a.style('font-size','60px');
+  // a.style('font-family',op);
+  a.style('color','white');
+  a.style('text-decoration','none');
+  // text("Copy the link below:",width/2,height/2+160);
+  // text("https://docs.google.com/forms/d/e/1FAIpQLScJKKB0JMUb81AbePQjwJ0--53Z2_V-wavHqXTM9tQ3LlRLjA/viewform",width/2,height/2+200);
+  pop();
 }
 
 
@@ -98,26 +125,65 @@ class Bubble {
       // ellipse(this.pos.x, this.pos.y,80,80);
       if (this.theme == "50's") {
         image(tv50,this.pos.x-90,this.pos.y-80,180,220);
+      } else if (this.theme == "60's") {
+        image(tv60,this.pos.x-100,this.pos.y-80,240,150);
+      } else if (this.theme == "70's") {
+        image(tv70,this.pos.x-100,this.pos.y-80,240,150);
+      } else if (this.theme == "80's") {
+        image(tv80,this.pos.x-90,this.pos.y-80,240,150);
+      } else if (this.theme == "90's") {
+        image(tv90,this.pos.x-90,this.pos.y-80,240,150);
+      } else if (this.theme == "00's") {
+        image(tv00,this.pos.x-90,this.pos.y-80,240,150);
       }
       pop()
     } else if (this.show  == "The Falcon and the Winter Soldier") {
       push()
       noStroke();
-      fill('pink');
-      rect(this.pos.x, this.pos.y,200,80);
+      // fill('red');
+      // ellipse(this.pos.x, this.pos.y,80,80);
+      if (this.theme == "50's") {
+        image(tv50,this.pos.x-90,this.pos.y-80,180,220);
+      } else if (this.theme == "60's") {
+        image(tv60,this.pos.x-100,this.pos.y-80,240,150);
+      } else if (this.theme == "70's") {
+        image(tv70,this.pos.x-100,this.pos.y-80,240,150);
+      } else if (this.theme == "80's") {
+        image(tv80,this.pos.x-90,this.pos.y-80,240,150);
+      } else if (this.theme == "90's") {
+        image(tv90,this.pos.x-90,this.pos.y-80,240,150);
+      } else if (this.theme == "00's") {
+        image(tv00,this.pos.x-120,this.pos.y-80,240,150);
+      }
       pop()
     } else {
       push()
       noStroke();
-      fill('black');
-      rect(this.pos.x, this.pos.y,120,75);
+      if (this.theme == "50's") {
+        image(tv50,this.pos.x-90,this.pos.y-80,180,220);
+      } else if (this.theme == "60's") {
+        image(tv60,this.pos.x-100,this.pos.y-80,240,150);
+      } else if (this.theme == "70's") {
+        image(tv70,this.pos.x-100,this.pos.y-80,240,150);
+      } else if (this.theme == "80's") {
+        image(tv80,this.pos.x-90,this.pos.y-80,240,150);
+      } else if (this.theme == "90's") {
+        image(tv90,this.pos.x-90,this.pos.y-80,240,150);
+      } else if (this.theme == "00's") {
+        image(tv00,this.pos.x-120,this.pos.y-80,240,150);
+      }
       pop()
     }
 
     if (this.defeat == "Yes") {
       textFont(op,14);
+      // scoreSystem();
+      // text(yesScore,width/2,height/2);
+      // yesScore +=1;
+      // image(yes, width/2,height/2, 20,20);
+      // textFont(op,14);
       text(this.defeat, this.pos.x, this.pos.y);
-      image(yes, this.pos.x+10,this.pos.y-15, 20,20);
+      image(yes, this.pos.x-30,this.pos.y-15, 20,20);
     } else {
       textFont(op,14);
       text(this.defeat, this.pos.x, this.pos.y);
@@ -168,5 +234,4 @@ class Bubble {
       }
     }
   }
-
 }
