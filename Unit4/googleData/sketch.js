@@ -132,7 +132,7 @@ class Bubble {
       } else if (this.theme == "80's") {
         image(tv80,this.pos.x-90,this.pos.y-80,240,150);
       } else if (this.theme == "90's") {
-        image(tv90,this.pos.x-90,this.pos.y-80,240,150);
+        image(tv90,this.pos.x-90,this.pos.y-80,170,150);
       } else if (this.theme == "00's") {
         image(tv00,this.pos.x-90,this.pos.y-80,240,150);
       }
@@ -151,7 +151,7 @@ class Bubble {
       } else if (this.theme == "80's") {
         image(tv80,this.pos.x-90,this.pos.y-80,240,150);
       } else if (this.theme == "90's") {
-        image(tv90,this.pos.x-90,this.pos.y-80,240,150);
+        image(tv90,this.pos.x-90,this.pos.y-80,170,150);
       } else if (this.theme == "00's") {
         image(tv00,this.pos.x-120,this.pos.y-80,240,150);
       }
