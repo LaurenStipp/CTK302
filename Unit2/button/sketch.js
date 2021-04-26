@@ -30,9 +30,9 @@ function draw() {
 
 function mouseReleased(){
   if ((mouseX>width/2-50)&&(mouseX<width/2+50)&&(mouseY>height-100)&&(mouseY<height-50)) {
-    state=state + 1;
-    if (state > 2){
-      state = 0;
-    }
+    // state=state + 1;
+    // if (state > 2){
+    //   state = 0;
+    // }
   }
 }
