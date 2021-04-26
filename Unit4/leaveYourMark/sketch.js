@@ -37,10 +37,10 @@ function setup() {
 
   // Regular setup code we usually have
   createCanvas(windowWidth, windowHeight);
-  Mark = loadImage("assets/YourMarkBk.png");
+  // Mark = loadImage("assets/YourMarkBk.png");
   // Dots = loadImage("assets/Dots.png");
   imageMode(CENTER);
-  f1 = loadFont("assets/VerlagBold.otf");
+  // f1 = loadFont("assets/VerlagBold.otf");
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
