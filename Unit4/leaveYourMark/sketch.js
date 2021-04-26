@@ -140,6 +140,10 @@ class Bubble {
     // text(numberOfTouches + ' touches', width/2,height/2);
 
     switch(numberOfTouches) {
+
+      if (numberOfTouches > 1) {
+        numberOfTouches = 1;
+      }
       case 0:
       text("HI",width/2,height/2);
       break;
