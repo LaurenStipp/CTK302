@@ -141,12 +141,11 @@ class Bubble {
 
     switch(numberOfTouches) {
       case 0:
-      background('#d41f2d');
-      text("HELLO",width/2,height/2);
+      text("HI",width/2,height/2);
       break;
 
       case 1:
-      background('#d41f2d');
+      text("HELLO",width/2,height/2);
       break;
 
 
