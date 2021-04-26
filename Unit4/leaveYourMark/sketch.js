@@ -142,28 +142,27 @@ class Bubble {
     switch(numberOfTouches) {
 
       case 0:
-      text("HI",width/2,height/2);
+      if (myLocation == this.place) {
+        fill('white');
+        // textFont(f1);
+        text(this.name, this.pos.x, this.pos.y - 25);
+        text(this.major, this.pos.x, this.pos.y);
+        text(this.quote, this.pos.x, this.pos.y + 25);
+        text(this.place, this.pos.x, this.pos.y + 50);
+
+      } else {
+        fill('grey');
+      }
       break;
-      
+
 
       case 2:
       text("HELLO",width/2,height/2);
+      makeBubbles();
       break;
 
 
     }
-
-    // if (myLocation == this.place) {
-    //   fill('white');
-    //   textFont(f1);
-    //   text(this.name, this.pos.x, this.pos.y - 25);
-    //   text(this.major, this.pos.x, this.pos.y);
-    //   text(this.quote, this.pos.x, this.pos.y + 25);
-    //   text(this.place, this.pos.x, this.pos.y + 50);
-    //
-    // } else {
-    //   fill('grey');
-    // }
   }
 
   move() {
