@@ -141,10 +141,12 @@ class Bubble {
 
     switch(numberOfTouches) {
       case 0:
+      background('#d41f2d');
       text("1 finger",5,22);
       break;
 
       case 1:
+      background('#d41f2d');
       if (numberOfTouches > 1) {
         text("2 or more finger",5,22);
       } else {
