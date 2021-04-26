@@ -140,6 +140,8 @@ class Bubble {
     text(numberOfTouches + ' touches', 5, 10);
 
     switch(numberOfTouches) {
+
+       fill('black');
       case 0:
       background('#d41f2d');
       text("1 finger",5,22);
