@@ -137,12 +137,12 @@ class Bubble {
   display() {
     clear();
     numberOfTouches = touches.length;
-    text(numberOfTouches + ' touches', width/2,heigth/2);
+    text(numberOfTouches + ' touches', width/2,height/2);
 
     switch(numberOfTouches) {
       case 0:
       background('#d41f2d');
-      text("HELLO",width/2,heigth/2);
+      text("HELLO",width/2,height/2);
       break;
 
       case 1:
