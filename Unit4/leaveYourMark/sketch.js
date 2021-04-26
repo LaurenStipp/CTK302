@@ -74,7 +74,7 @@ function makeBubbles() {
 function draw() {
   background('#d41f2d');
   // image(Dots, width / 2, height / 2);
-  image(Mark, width / 2, height / 2);
+  // image(Mark, width / 2, height / 2);
 
   textAlign(CENTER);
   // textAlign(LEFT);
