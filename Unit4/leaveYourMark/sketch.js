@@ -137,7 +137,7 @@ class Bubble {
   display() {
     clear();
     numberOfTouches = touches.length;
-    text(numberOfTouches + ' touches', width/2,height/2);
+    // text(numberOfTouches + ' touches', width/2,height/2);
 
     switch(numberOfTouches) {
       case 0:
