@@ -158,10 +158,22 @@ class Bubble {
 
       case 2:
       text("HELLO",width/2,height/2);
-      makeBubbles();
+      // makeBubbles();
       break;
 
 
+    }
+  }
+
+  function makeAllBubbles() {
+    // iterate through the array of data and create an object and push it on an array called bubbles
+    bubbles = [] ;
+    let yaxis = 0 ;
+    for (let i = 0; i < allnames.length; i++) {
+      if (allnames[i].Hint == myLocation) {
+        bubbles.push(new Bubble(allnames[i].Name, allnames[i].Major, allnames[i].Quote, allnames[i].Hint, yaxis * 120)); // THESE Name and Shape need to match your column names in your spreadsheet!
+        yaxis++ ; // only change the y axis of the next bubble if we found a bubble.
+      }
     }
   }
 
