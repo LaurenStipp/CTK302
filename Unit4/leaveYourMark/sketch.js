@@ -39,12 +39,12 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   // Mark = loadImage("assets/YourMarkBk.png");
   // Dots = loadImage("assets/Dots.png");
-  imageMode(CENTER);
+  // imageMode(CENTER);
   // f1 = loadFont("assets/VerlagBold.otf");
   textAlign(CENTER);
   ellipseMode(CENTER);
   rectMode(CENTER);
-  imageMode(CENTER);
+  // imageMode(CENTER);
 
 }
 
